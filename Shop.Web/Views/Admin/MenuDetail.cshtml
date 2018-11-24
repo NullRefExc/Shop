@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>菜单明细</title>
+    <link href="~/Front/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/CSS/Admin/admin.css" rel="stylesheet" />
+    <script src="~/Front/layui/layui.js"></script>
+</head>
+<body layadmin-themealias="default">
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-body" style="padding: 15px;">
+                <form class="layui-form" action="" lay-filter="component-form-group">
+                    <input type="hidden" name="MenuId" value="@ViewBag.MenuId" />
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">菜单名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="MenuName" lay-verify="CN" placeholder="" autocomplete="off" class="layui-input" value="@ViewBag.MenuName">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Url</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Url" lay-verify="RUrl" placeholder="" autocomplete="off" class="layui-input" value="@ViewBag.Url ">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="component-form-switchTest" lay-text="开|关">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-layout-admin">
+                        <div class="layui-input-block">
+                            <div class="layui-footer" style="left: 0;">
+                                <button class="layui-btn" lay-submit="" data-action="/Admin/MenuEdit" lay-filter="component-form-submit">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Demo
+        layui.use('form', function () {
+            var $ = layui.jquery, form = layui.form, layer = layui.layer;
+            form.verify({
+                //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+                CN: [/[^x00-xff]/, '菜单名只能输入中文']
+            });
+            //监听提交
+            form.on('submit(component-form-submit)', function (sourcedata) {
+                //layer.msg(JSON.stringify(data.field));
+                var url = $(this).data("action");
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: sourcedata.field,
+                    dataType: "JSON",
+                    success: function (res) {
+                        if (res.Success) {
+                            window.parent.location.reload();
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                        }
+                        else {
+
+                        }                        
+                    }
+                })
+
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

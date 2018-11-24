@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>菜单列表</title>
+
+    <link href="~/Front/layui/css/layui.css" rel="stylesheet" />
+    <script src="~/Front/layui/layui.js"></script>
+</head>
+
+<body>
+
+    <div class="layui-fluid" style="padding-top:10px;">
+        <div class="layui-row">
+            <button data-href="/Admin/MenuDetail" data-title="添加菜单" data-width="530" data-height="370" class="layui-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>添加菜单</button>
+        </div>
+    </div>
+
+    <div class="layui-fluid">
+        <table class="layui-table">
+            <colgroup>
+                <col width="15%">
+                <col width="75%">
+                <col width="20%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>菜单时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.sysMenuList)
+                {
+                    <tr>
+                        <td>@item.MenuId</td>
+                        <td>@item.MenuName</td>
+                        <td>
+                            <button data-href="/Admin/MenuDetail?MenuId=@item.MenuId" data-width="530" data-height="370"  class="layui-btn layui-btn-primary layui-btn-xs"><i class="layui-icon layui-icon-edit"></i>修改</button>
+                            <button class="layui-btn layui-btn-danger layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="layui-fluid" style="text-align:center;">
+        <div id="test1">
+
+        </div>
+    </div>
+    <script>
+        layui.use('layer', function () { //独立版的layer无需执行这一句
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+            $(".layui-btn").click(function () {
+                var href = $(this).data("href");
+                var title = $(this).data("title");
+                var width = $(this).data("width");
+                var height = $(this).data("height");
+                if (!width) {
+                    width = '1170';
+                }
+                if (!height) {
+                    height = "760";
+                }
+                var index = layer.open({
+                    type: 2 //此处以iframe举例
+                    , title: title
+                    , area: [width + 'px', height + 'px']
+                    //, shade: [0.1, '#393D49']
+                    , maxmin: true
+                    , content: href
+                    , zIndex: layer.zIndex //重点1
+                    , success: function (layero) {
+                    }
+                });
+
+                console.log(index);
+            })
+        });
+
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                , count: 50 //数据总数，从服务端得到
+            });
+        });
+    </script>
+</body>
+</html>

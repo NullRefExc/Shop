@@ -1,0 +1,14 @@
+F:\Shop\Shop.IDAL\bin\Debug\Shop.IDAL.dll
+F:\Shop\Shop.IDAL\bin\Debug\Shop.IDAL.pdb
+F:\Shop\Shop.IDAL\bin\Debug\Shop.Model.dll
+F:\Shop\Shop.IDAL\bin\Debug\EntityFramework.dll
+F:\Shop\Shop.IDAL\bin\Debug\Shop.Model.pdb
+F:\Shop\Shop.IDAL\bin\Debug\Shop.Model.dll.config
+F:\Shop\Shop.IDAL\bin\Debug\EntityFramework.xml
+F:\Shop\Shop.IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\Shop\Shop.IDAL\obj\Debug\Shop.IDAL.csprojAssemblyReference.cache
+F:\Shop\Shop.IDAL\obj\Debug\Shop.IDAL.csproj.CoreCompileInputs.cache
+F:\Shop\Shop.IDAL\obj\Debug\Shop.IDAL.csproj.CopyComplete
+F:\Shop\Shop.IDAL\obj\Debug\Shop.IDAL.dll
+F:\Shop\Shop.IDAL\obj\Debug\Shop.IDAL.pdb
+F:\Shop\Shop.IDAL\bin\Debug\Shop.IDAL.dll.config

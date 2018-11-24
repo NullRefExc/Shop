@@ -1,0 +1,13 @@
+F:\Shop\Shop.IBLL\bin\Debug\Shop.IBLL.dll
+F:\Shop\Shop.IBLL\bin\Debug\Shop.IBLL.pdb
+F:\Shop\Shop.IBLL\obj\Debug\Shop.IBLL.csprojAssemblyReference.cache
+F:\Shop\Shop.IBLL\obj\Debug\Shop.IBLL.csproj.CoreCompileInputs.cache
+F:\Shop\Shop.IBLL\obj\Debug\Shop.IBLL.dll
+F:\Shop\Shop.IBLL\obj\Debug\Shop.IBLL.pdb
+F:\Shop\Shop.IBLL\bin\Debug\Shop.Model.dll
+F:\Shop\Shop.IBLL\bin\Debug\EntityFramework.dll
+F:\Shop\Shop.IBLL\bin\Debug\Shop.Model.pdb
+F:\Shop\Shop.IBLL\bin\Debug\Shop.Model.dll.config
+F:\Shop\Shop.IBLL\bin\Debug\EntityFramework.xml
+F:\Shop\Shop.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\Shop\Shop.IBLL\obj\Debug\Shop.IBLL.csproj.CopyComplete
